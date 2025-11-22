@@ -1,24 +1,26 @@
-# OpenCV Image Filters — Basics
+# 🖼️ OpenCV Image Filters — Basics
 
-This mini-project is part of my daily computer vision learning practice.
+This project demonstrates a complete **image filtering pipeline using OpenCV**.  
+A sample input image is processed and exported into multiple filtered variants including grayscale, blur, edge detection, and binary threshold.
 
-It loads an input image and applies a series of basic OpenCV operations:
-
-- Grayscale conversion
-- Gaussian blur
-- Canny edge detection
-- Binary thresholding
-
-All outputs are saved into an `outputs/` folder.
+This repo is part of my **Computer Vision learning journey**, where I build small, practical projects and improve step by step.
 
 ---
 
-## 📦 Requirements
+## 🚀 Features
 
-- Python 3.x
-- OpenCV (`opencv-python`)
+| Filter | Description |
+|--------|-------------|
+| **Original** | Loads the input image |
+| **Grayscale** | Converts BGR → Gray |
+| **Gaussian Blur** | Noise reduction using a 5×5 kernel |
+| **Canny Edge Detection** | Extracts strong edges from the image |
+| **Binary Threshold** | Converts grayscale into black–white mask |
 
-Install dependencies:
+---
 
+### Install dependencies Running the Script
 ```bash
 pip install -r requirements.txt
+python main.py
+---
