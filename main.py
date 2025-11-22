@@ -1,22 +1,11 @@
+import cv2
 import os
-
-# --- DEBUG: write to a log file to prove script is running at all ---
-with open("debug_log.txt", "a", encoding="utf-8") as f:
-    f.write("=== Python started this script ===\n")
-
-import cv2  # this will trigger the NumPy warnings, that's fine
-
 
 def ensure_dir(path: str):
     if not os.path.exists(path):
         os.makedirs(path)
 
-
 def main():
-    # --- DEBUG: mark we actually entered main() ---
-    with open("debug_log.txt", "a", encoding="utf-8") as f:
-        f.write("Entered main()\n")
-
     print("Current working directory:", os.getcwd())
 
     input_path = os.path.join("samples", "input.jpg")
@@ -29,13 +18,9 @@ def main():
     img = cv2.imread(input_path)
     if img is None:
         print("❌ Failed to load image. Check path / file name / extension.")
-        with open("debug_log.txt", "a", encoding="utf-8") as f:
-            f.write("Failed to load image\n")
         return
     else:
         print("✅ Image loaded successfully. Shape:", img.shape)
-        with open("debug_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"Image loaded. Shape: {img.shape}\n")
 
     # 0. Original
     cv2.imwrite(os.path.join(output_dir, "0_original.jpg"), img)
@@ -62,9 +47,6 @@ def main():
     print("Saved 4_threshold.jpg")
 
     print(f"✅ All processed images saved in: {output_dir}")
-    with open("debug_log.txt", "a", encoding="utf-8") as f:
-        f.write("Finished processing and saving images\n")
 
-
-# --- IMPORTANT: call main() UNCONDITIONALLY ---
-main()
+if __name__ == "__main__":
+    main()
